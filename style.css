@@ -5,7 +5,7 @@
  Author:       Corey Winter
  Author URI:   http://www.beingboss.club
  Template:     understrap
- Version:      1.8.2
+ Version:      1.8.3
  License: GNU General Public License v2 or later
  License URI: http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  beingboss2018
@@ -4429,16 +4429,19 @@ a.vacationitemreadmore:hover {
 	WEBINAR DETAIL
 **********************/
 
-.single-webinar #footer-subscribe {
+.single-webinar #footer-subscribe,
+.single-replay #footer-subscribe {
 	display: none;
 }
 
-.single-webinar #wrapper-footer {
+.single-webinar #wrapper-footer,
+.single-replay #wrapper-footer {
 	background: #fff;
 	color: #252525;
 }
 
-.single-webinar #wrapper-footer .site-info {
+.single-webinar #wrapper-footer .site-info,
+.single-replay #wrapper-footer .site-info {
 	text-align: center;
 	padding-top: 0;
 }
@@ -4468,7 +4471,8 @@ a.vacationitemreadmore:hover {
 	padding-top: 15px;
 }
 
-.single-webinar h1.webinar-title {
+.single-webinar h1.webinar-title,
+.single-replay h1.webinar-title {
 	color: #fff;
 	font-family: "lust-script",sans-serif;
 	font-size: 54px;
@@ -4476,64 +4480,71 @@ a.vacationitemreadmore:hover {
 	text-transform: none;
 }
 
-.single-webinar img.guest-image {
+.single-webinar img.guest-image,
+.single-replay img.guest-image {
 	border-radius: 100%;
-    	width: 175px;
-    	height: 175px;
-    	object-fit: cover;
+	width: 175px;
+	height: 175px;
+	object-fit: cover;
 	border: 4px solid #fff;
 }
 
-.single-webinar .top-subscribe {
+.single-webinar .top-subscribe,
+.single-replay .top-subscribe {
 	background: #fff;
-    	box-shadow: 0 0 15px #888;
-    	padding: 25px;
-    	display: table;
-    	width: 100%;
-    	margin: -85px auto 0;
-    	height: 175px;
+	box-shadow: 0 0 15px #888;
+	padding: 25px;
+	display: table;
+	width: 100%;
+	margin: -85px auto 0;
+	height: 175px;
 	position: relative;
 }
 
-.single-webinar .top-subscribe .inner {
-    	position: relative;
-    	margin: auto;
-    	top: 0;
-    	bottom: 0;
-    	left: 0;
-    	right: 0;
-    	display: table;
-    	width: 100%;
+.single-webinar .top-subscribe .inner,
+.single-replay .top-subscribe .inner {
+	position: relative;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: table;
+	width: 100%;
 }
 
-.single-webinar .webinar-left {
+.single-webinar .webinar-left,
+.single-replay .webinar-left {
 	float: left;
 	width: 20%;
 }
 
-.single-webinar .webinar-right {
+.single-webinar .webinar-right,
+.single-replay .webinar-right {
 	float: right;
 	width: 75%;
 }
 
-.single-webinar p.month {
-    	background: #252525;
-    	padding: 8px 20px;
-    	color: #fff;
-    	text-transform: uppercase;
-    	text-align: center;
-    	font-size: 16px;
-    	line-height: 14px;
+.single-webinar p.month,
+.single-replay p.month {
+	background: #252525;
+	padding: 8px 20px;
+	color: #fff;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 16px;
+	line-height: 14px;
 	font-family: brandon-grotesque, sans-serif;
-    	font-style: normal;
-    	font-weight: 900;
+	font-style: normal;
+	font-weight: 900;
 	line-height: 14px !important;
 }
 
-.single-webinar p.day {
-    	font-size: 92px !important;
-    	line-height: 1.0 !important;
-    	padding-top: 15px;
+.single-webinar p.day,
+.single-replay p.day {
+	font-size: 92px !important;
+	line-height: 1.0 !important;
+	padding-top: 15px;
 	font-family: "lust-script",sans-serif;
 	text-align: center;
 }
@@ -4557,14 +4568,66 @@ article.webinar .entry-footer button.webinar-button {
 	margin: 30px auto 0;
 }
 
-.single-webinar footer#wrapper-footer .site-info a {
+.single-webinar footer#wrapper-footer .site-info a,
+.single-replay footer#wrapper-footer .site-info a {
 	color: #252525;
 }
 
-.single-webinar footer#wrapper-footer .site-info a:hover {
+.single-webinar footer#wrapper-footer .site-info a:hover,
+.single-replay footer#wrapper-footer .site-info a:hover {
 	color: #EC008C;
 }
 
+.single-webinar .webinar-signup {
+	display: table;
+    width: 100%;
+}
+
+.single-webinar .webinar-signup input#drip-email, 
+.single-webinar .webinar-signup input#drip-Name,
+.single-webinar .entry-footer .webinar-signup input#drip-email, 
+.single-webinar .entry-footer .webinar-signup input#drip-Name {
+	display: inline-block;
+	background: #eaeaea;
+	width: 35%;
+}
+
+.single-webinar .entry-footer .webinar-signup input#drip-email, 
+.single-webinar .entry-footer .webinar-signup input#drip-Name {
+	background: #fff;
+}
+
+.single-webinar .webinar-signup input[type=submit],
+.single-webinar .entry-footer .webinar-signup input[type=submit] {
+    margin: 0 auto;
+    text-align: center;
+    background-color: #FFF200;
+    color: #252525;
+    border-radius: 10px;
+    font-family: brandon-grotesque, sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    padding: 10px 50px;
+    display: inline-block;
+    width: 28%;
+    border: 0;
+    text-transform: uppercase;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.single-webinar .entry-footer .webinar-signup input[type=submit] {
+	color: #fff;
+    background-color: #252525;
+}
+
+.single-webinar .webinar-signup input[type=submit]:hover,
+.single-webinar .entry-footer .webinar-signup input[type=submit]:hover {
+    background-color: #EC008C;
+    color: #fff;
+    cursor: pointer;
+}
 
 @media screen and (max-width: 992px) {
 	#webinar-wrapper .bbpage-header {
@@ -4613,6 +4676,16 @@ article.webinar .entry-footer button.webinar-button {
 
 	.single-webinar p.day {
 		font-size: 72px !important;
+	}
+
+	.single-webinar .webinar-signup input#drip-email, 
+	.single-webinar .webinar-signup input#drip-Name,
+	.single-webinar .entry-footer .webinar-signup input#drip-email, 
+	.single-webinar .entry-footer .webinar-signup input#drip-Name,
+	.single-webinar .webinar-signup input[type=submit],
+	.single-webinar .entry-footer .webinar-signup input[type=submit] {
+		display: table;
+		width: 100%;
 	}
 }
 

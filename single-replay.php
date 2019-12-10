@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all single webinar posts.
+ * The template for displaying all single replay posts.
  *
  * @package understrap
  */
@@ -16,16 +16,16 @@ get_header( 'squeeze' );
 				<?php while ( have_posts() ) : the_post(); ?>
 
 					<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-						<?php $postid = get_the_ID(); ?>
-						<?php $webinar_custom_tracker = get_post_meta( $postid, 'bbwebinar_custom_tracker', true ); ?>
-						<?php $webinar_mode = get_post_meta( $postid, 'bbwebinar_mode_select', true ); ?>
-						<?php $webinar_header_image = get_post_meta ( $postid, 'bbwebinar_header_image', true ); ?>
-						<?php $webinar_main_title = get_post_meta( $postid, 'bbwebinar_main_title', true ); ?>
-						<?php $webinar_header_text = get_post_meta( $postid, 'bbwebinar_header_text', true ); ?>
-						<?php $webinar_guest_one_name = get_post_meta( $postid, 'bbwebinar_guest_one_name', true ); ?>
-						<?php $webinar_guest_one_image = get_post_meta( $postid, 'bbwebinar_guest_one_image', true ); ?>
-						<?php $webinar_guest_two_name = get_post_meta( $postid, 'bbwebinar_guest_two_name', true ); ?>
-						<?php $webinar_guest_two_image = get_post_meta( $postid, 'bbwebinar_guest_two_image', true ); ?>
+						<?php $postid = get_the_ID();
+						 $relatedwebinar = get_post_meta ($postid, 'bbreplay_webinar_select', true );
+						 $webinar_header_image = get_post_meta($relatedwebinar, 'bbwebinar_header_image', true ); 
+						 $webinar_main_title = get_post_meta($relatedwebinar, 'bbwebinar_main_title', true );
+						 $webinar_header_text = get_post_meta($relatedwebinar, 'bbwebinar_header_text', true );
+						 $webinar_guest_one_name = get_post_meta($relatedwebinar, 'bbwebinar_guest_one_name', true );
+						 $webinar_guest_one_image = get_post_meta($relatedwebinar, 'bbwebinar_guest_one_image', true );
+						 $webinar_guest_two_name = get_post_meta($relatedwebinar, 'bbwebinar_guest_two_name', true );
+						 $webinar_guest_two_image = get_post_meta($relatedwebinar, 'bbwebinar_guest_two_image', true ); 
+						 $webinar_replay_video = get_post_meta( $postid, 'bbreplay_replay_video', true ); ?>
 
 						<header class="entry-header">
 
@@ -72,16 +72,41 @@ get_header( 'squeeze' );
 
 						</header><!-- .entry-header -->
 
-						<?php if($webinar_mode == 'signupreplay') {
-							get_template_part( '/template-parts/webinar-signupreplay' );
-						} elseif($webinar_mode == 'replay') {
-							get_template_part( '/template-parts/webinar-replay' );
-						} else {
-							get_template_part( '/template-parts/webinar-upcoming' );
-						} ?>
-						
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="top-subscribe">
+										<div class="inner">
+											<?php echo $webinar_replay_video; ?>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 
-					<?php echo $webinar_custom_tracker; ?>
+						<div class="entry-content">
+							<div class="container pagesection80">
+								<div class="row">			
+									<div class="col-md-6 offset-md-3">
+										<?php the_content(); ?>
+									</div>		
+								</div>
+							</div>
+
+						</div><!-- .entry-content -->
+
+
+<!-- 						<?php if ( !empty( $fullwidth_optin ) ) { ?>
+							<footer class="entry-footer optinwrapper">
+								<div class="container">
+									<img class="center" src="/wp-content/themes/beingboss2018/img/Optin_Icon_White.png">
+									<h2 class="center white padbot0">FREE RESOURCE: <?php echo get_the_title($fullwidth_optin); ?></h2>
+									<?php echo apply_filters('the_content', get_post_field('post_content', $fullwidth_optin)); ?>
+								</div>
+							</footer>
+						<?php } ?> -->
+
+
 					</article><!-- #post-## -->
 
 				<?php endwhile; // end of the loop. ?>
