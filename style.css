@@ -5,7 +5,7 @@
  Author:       Corey Winter
  Author URI:   http://www.beingboss.club
  Template:     understrap
- Version:      1.8.3
+ Version:      1.8.4
  License: GNU General Public License v2 or later
  License URI: http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  beingboss2018
@@ -39,6 +39,10 @@ p {
 
 p:last-child {
 	padding-bottom: 0px !important;
+}
+
+#full-width-page-wrapper p:empty {
+	display: none;
 }
 
 .center {
@@ -317,6 +321,11 @@ img.circle.yellow,
 img.circle.blue,
 .circle.blue {
     box-shadow: 5px 5px #00AEEF;
+}
+
+img.circle.darkblue,
+.circle.darkblue {
+    box-shadow: 5px 5px #1f3978;
 }
 
 p.highlight {
@@ -832,6 +841,11 @@ h5, .h5 {
 	.lustscript.huge { 
 		font-size: 38px !important;
     		line-height: 1.3 !important;
+	}
+
+	.mfs18 {
+	    font-size: 18px !important;
+	    line-height: 1.3 !important;
 	}
 
 	.mfs32 {
@@ -1512,7 +1526,8 @@ body.home-page .navbar-light .navbar-nav .bb-special-dropdown .dropdown-menu .na
 
 .ubermenu .podcastdropdown li.ubermenu-autocolumn.menu-item-12918-col-0,
 .ubermenu .podcastdropdown li.ubermenu-autocolumn.menu-item-12925-col-0,
-.ubermenu .podcastdropdown li.ubermenu-autocolumn.menu-item-12920-col-0 {
+.ubermenu .podcastdropdown li.ubermenu-autocolumn.menu-item-12920-col-0,
+.ubermenu .podcastdropdown li.ubermenu-autocolumn.menu-item-13920-col-0 {
 	padding-top: 0px;
 	padding-bottom: 0px;
 }
@@ -1965,6 +1980,100 @@ ul#menu-footer-info, ul#menu-footer-content, ul#menu-footer-join-us {
     text-shadow: none;
 	margin: 25px 0 auto auto;
 }
+
+#home-wrapper .conferenceheader {
+	min-height: 775px;
+	height: 775px;
+}
+
+#home-wrapper .conferenceoverlay {
+	height: 775px;
+}
+
+#home-wrapper .conferenceheader .container {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	text-align: right;
+	z-index: 1000;
+}
+
+#home-wrapper .conferenceheader .headertext {
+	padding-top: 250px;
+    display: table;
+    width: 100%;
+    bottom: 0;
+    margin: auto;
+}
+
+#home-wrapper .conferenceheader .headertext .button-yellow {
+	margin: 25px 0 auto auto;
+}
+
+@media screen and (max-width: 799px) {
+	#home-wrapper .conference-mobile-header {
+		height: 450px;
+		padding-top: 150px;
+	}
+}
+
+@media screen and (min-width: 800px) and (max-width: 991px) {
+	#home-wrapper .conferenceheader {
+		min-height: 500px;
+		height: 500px;
+	}
+
+	#home-wrapper .conferenceoverlay {
+		height: 500px;
+	}
+
+	#home-wrapper .conferenceheader .headertext {
+		padding-top: 150px;
+	}
+
+	#home-wrapper .headertext .giant {
+		font-size: 52px !important;
+	}
+}
+
+@media screen and (min-width: 992px) and (max-width: 1100px) {
+	#home-wrapper .conferenceheader {
+		min-height: 550px;
+		height: 550px;
+	}
+
+	#home-wrapper .conferenceoverlay {
+		height: 550px;
+	}
+
+	#home-wrapper .conferenceheader .headertext {
+		padding-top: 150px;
+	}
+
+	#home-wrapper .headertext .giant {
+		font-size: 52px !important;
+	}
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1400px) {
+	#home-wrapper .conferenceheader {
+		min-height: 600px;
+		height: 600px;
+	}
+
+	#home-wrapper .conferenceoverlay {
+		height: 600px;
+	}
+
+	#home-wrapper .conferenceheader .headertext {
+		padding-top: 150px;
+	}
+}
+
 
 .thrv-leads-form-box.thrv_wrapper {
 	padding: 0 !important;
@@ -3013,9 +3122,9 @@ h1.shownote-title {
 	border-right: 1px solid #fff;
 }
 
-#shownote-wrapper .optinwrapper .jpibfi_container p {
+/*#shownote-wrapper .optinwrapper .jpibfi_container p {
 	display: none;
-}
+}*/
 
 
 @media screen and (max-width: 1000px) {
@@ -3150,6 +3259,10 @@ p.comment-prompt {
     margin: 0 auto;
     padding: 15px 0 50px !important;
  }
+
+.episode-transcript h5 {
+	margin-top: 25px;
+}
 
 .relatedpostsection {
     	display: -webkit-flex;
@@ -4308,6 +4421,15 @@ a.vacationitemreadmore:hover {
    	appearance: none;
 }
 
+.discoversubscribe input#drip-email, 
+.discoversubscribe input#drip-Name,
+.discoversubscribe input.button {
+	width: 31%;
+    max-width: 100%;
+    display: inline-block;
+    margin: 0 1% 15px !important;
+}
+
 
 .jointheclubsection {
 	background: url('/wp-content/themes/beingboss2018/img/StartHere_IAmBeingBoss.jpg');
@@ -4739,7 +4861,7 @@ article.webinar .entry-footer button.webinar-button {
 }
 
 .woocommerce input.button {
-	background-color: #ffdd00;
+	background-color: #FFF200;
 	color: #252525;
 	-webkit-box-shadow: none;
 	-webkit-appearance: none;
@@ -4782,7 +4904,7 @@ article.webinar .entry-footer button.webinar-button {
 }
 
 .woocommerce a.button.alt {
-	background-color: #ffdd00;
+	background-color: #FFF200;
 	color: #252525;
 }
 
@@ -4791,7 +4913,7 @@ article.webinar .entry-footer button.webinar-button {
 }
 
 .woocommerce input.button.alt {
- 	background-color: #ffdd00;
+ 	background-color: #FFF200;
 	color: #252525;
 }
 
@@ -4805,11 +4927,11 @@ article.webinar .entry-footer button.webinar-button {
 }
 
 .woocommerce .woocommerce-info {
-    border-top-color: #ffdd00;
+    border-top-color: #FFF200;
 }
 
 .woocommerce .woocommerce-message {
-    border-top-color: #ffdd00;
+    border-top-color: #FFF200;
 }
 
 p.product.woocommerce.add_to_cart_inline {
@@ -4997,7 +5119,7 @@ input#inscription_checkbox.input-checkbox, input#vacation_terms.input-checkbox {
     font-family: brandon-grotesque, sans-serif;
     font-size: 16px;
     font-weight: 900;
-    padding: 10px 50px;
+    padding: 20px 50px;
     display: table;
     border: 0;
     text-transform: uppercase;
@@ -8018,11 +8140,32 @@ body #buddypress div.bbp-template-notice a:hover {
 	}
 }
 
+@media screen and (min-width: 800px) and (max-width: 991px) {
+	.conferenceheader {min-height: 500px;height: 500px;}
+	#home-wrapper .conferenceoverlay {height: 500px;}
+}
+
+@media screen and (min-width: 992px) and (max-width: 1100px) {
+	.conferenceheader {min-height: 550px;height: 550px;}
+	.conferenceoverlay {height: 550px;}
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1400px) {
+	.conferenceheader {min-height: 600px;height: 600px;}
+	.conferenceoverlay {height: 600px;}
+}
+
+
 .coursepaymentsection .paymentboxes,
 .conferencepaymentsection .paymentboxes,
 .communitypaymentsection .paymentboxes {
 	display: table;
 	position: relative;
+}
+
+.communitypaymentsection .paymentboxes {
+	max-width: 750px;
+	margin: 0 auto;
 }
 
 .coursepaymentsection .paymentboxes .box,
@@ -8036,13 +8179,13 @@ body #buddypress div.bbp-template-notice a:hover {
 }
 
 .communitypaymentsection .paymentboxes .box {
-	width: 30%;
+	width: 47%;
 	margin: 0 1.5%;
 }
 
 .communitypaymentsection .paymentboxes .box.box1,
 .communitypaymentsection .paymentboxes .box.box3 {
-	margin-top: 30px;
+	margin-top: 0px;
 }
 
 /*.coursepaymentsection .paymentboxes .box.box1 {
@@ -8121,6 +8264,10 @@ body #buddypress div.bbp-template-notice a:hover {
 
 .communitypaymentsection .paymentboxes .box .bottom p {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.conferencepaymentsection .paymentboxes .box .bottom p {
+	padding-bottom: 0;
 }
 
 .coursepaymentsection .paymentboxes .box .top .price,
@@ -8217,6 +8364,34 @@ body #buddypress div.bbp-template-notice a:hover {
 	padding-top: 400px;
 }
 
+.conferencespeakers .container {max-width: 1000px;}
+
+.conferencespeakers h5 {
+	padding-top: 5px;
+	margin-bottom: 5px;
+	padding-bottom: 0;
+	text-transform: uppercase;
+}
+
+.conferencespeakers p {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	    font-size: 14px !important;
+    line-height: 18px !important;
+}
+
+.conferencespeakers img.circle, .conferencespeakers .circle {width: 170px; height: 170px;}
+
+
+.conferenceschedule h4 {
+	margin: 50px auto 25px;
+	background-color: #FFF200;
+	padding: 10px 15px;
+	color: #252525;
+	max-width: 360px;
+	display: block;
+	font-size: 26px;
+    font-weight: 900;
+}
 
 
 @media screen and (max-width: 774px) {
@@ -8247,6 +8422,9 @@ body #buddypress div.bbp-template-notice a:hover {
 	.communitypaymentsection .paymentboxes  {
 		width: 100%;
 	}
+
+	.conferencespeakers img.circle, .conferencespeakers .circle {width: 150px; height: 150px;}
+	.conferencespeakers h5 {font-size: 16px !important;}
 }
 
 
@@ -8528,3 +8706,73 @@ ul.shopmenu a:hover {
 	background-color: rgba(0,0,0,0.1);
 	box-shadow: 0 0 15px #888;
 }
+
+
+
+
+
+
+.woocommerce .onlineeventterms input.custom-control-input {
+	position: relative;
+    opacity: 1;
+    z-index: 1;
+}
+
+.woocommerce form .form-row.onlineeventterms .woocommerce-input-wrapper .description {
+	background: transparent;
+    padding: 0;
+    margin: 0 auto 25px;
+    display: table !important;
+    text-align: center;
+}
+
+.woocommerce form .form-row.onlineeventterms .woocommerce-input-wrapper .description::before {display: none !important;}
+
+.woocommerce form .form-row.onlineeventterms .woocommerce-input-wrapper .description a {
+    color: #00AEEF;
+}
+
+
+.yith-wcaf.yith-wcaf-registration-form.woocommerce form {
+	width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: table;
+   }
+
+ .yith-wcaf.yith-wcaf-registration-form.woocommerce form label {
+ 	font-weight: bold !important;
+    font-size: 20px !important;
+ }
+
+.yith-wcaf.yith-wcaf-registration-form.woocommerce form input {
+  	    height: 45px !important;
+ }
+
+.yith-wcaf.yith-wcaf-registration-form.woocommerce button.btn.button {
+	    max-width: 85%;
+    margin: 25px auto;
+    text-align: center;
+    color: #fff;
+    background-color: #252525;
+    border-radius: 10px;
+    font-family: brandon-grotesque, sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    padding: 15px 50px;
+    display: table;
+    border: 0;
+    text-transform: uppercase;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+        background-color: #FFF200;
+    color: #252525;
+}
+.yith-wcaf.yith-wcaf-registration-form.woocommerce button.btn.button:hover {
+    background-color: #EC008C;
+    color: #fff;
+    cursor: pointer;
+}
+
+.yith-wcaf.yith-wcaf-dashboard-summary.woocommerce .myaccount_user {display: none !important;}

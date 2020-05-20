@@ -3,12 +3,13 @@
 		<div class="container">
 				<div class="row">
 					<div class="col-md-6">
-						<?php wp_nav_menu(
-							array(
-								'menu'  => 'Dashboard Menu',
-								'menu_class' => 'dashboard-menu'
-							)
-						); ?>
+						<div class="menu-dashboard-menu-container">
+							<ul id="menu-dashboard-menu" class="dashboard-menu">
+								<li class="menu-item"><a href="/dashboard">Dashboard</a></li>
+								<li class="menu-item"><a href="/materials">Materials</a></li>
+								<li class="menu-item"><a href="/dashboard/affiliate">Affiliate</a></li>
+							</ul>
+						</div>
 					</div>
 					<div class="col-md-6">
 						<?php 
@@ -19,9 +20,9 @@
 						<?php if ( is_user_logged_in() ) { ?>
 							<div class="menu-user-menu-container">
 								<ul id="menu-user-menu" class="user-menu">
-									<li><a href="/members/<?php echo $current_user_name; ?>/front/">Profile</a></li>
-									<li><a href="/members/<?php echo $current_user_name; ?>/shop/cart/">Cart</a></li>
-									<li><a href="/members/<?php echo $current_user_name; ?>/settings/">Settings</a></li>
+									<li><a href="/members/me/shop/cart/">Cart</a></li>
+									<li><a href="/account/orders">Orders</a></li>
+									<li><a href="/members/me/settings/">Settings</a></li>
 									<li><a href="<?php echo wp_logout_url(); ?>">Log Out</a></li>
 								</ul>
 							</div>

@@ -15,6 +15,23 @@ get_header( 'squeeze' );
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
+					<?php if( (get_the_ID() == '11715') || (get_the_ID() == '11727') ) { ?>
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12 content-area" id="primary">
+									<section class="error-404 not-found">
+										<div class="pagesection80 center">
+											<div class="error-number"><img src="http://beingboss.club/wp-content/uploads/2016/03/404oops.png"></div>
+											<p class="xxmedium">Please excuse us. This webinar is under construction.</p>
+											<p class="xxmedium">While you wait for it to come back, we have other training you can take!</p>
+											<p class="xxmedium"><a href="/webinar/timemanagement">Check out our free Time Management Training >></a></p>
+										</div>
+									</section><!-- .error-404 -->
+								</div><!-- #primary -->
+							</div><!-- .row -->
+						</div><!-- Container end -->
+					<?php } else { ?>
+
 					<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 						<?php $postid = get_the_ID(); ?>
 						<?php $webinar_custom_tracker = get_post_meta( $postid, 'bbwebinar_custom_tracker', true ); ?>
@@ -84,13 +101,13 @@ get_header( 'squeeze' );
 					<?php echo $webinar_custom_tracker; ?>
 					</article><!-- #post-## -->
 
+				<?php } ?>
+
 				<?php endwhile; // end of the loop. ?>
 
 			</main><!-- #main -->
 
-		</div><!-- #primary -->
-
-</div><!-- Container end -->
+	</div><!-- Container end -->
 
 </div><!-- Wrapper end -->
 
