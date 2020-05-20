@@ -19,9 +19,9 @@
 						<?php if ( is_user_logged_in() ) { ?>
 							<div class="menu-user-menu-container">
 								<ul id="menu-user-menu" class="user-menu">
-									<li><a href="/members/<?php echo $current_user_name; ?>/front/">Profile</a></li>
-									<li><a href="/members/<?php echo $current_user_name; ?>/shop/cart/">Cart</a></li>
-									<li><a href="/members/<?php echo $current_user_name; ?>/settings/">Settings</a></li>
+									<li><a href="/members/me/front/">Profile</a></li>
+									<li><a href="/members/me/shop/cart/">Cart</a></li>
+									<li><a href="/members/me/settings/">Settings</a></li>
 									<li><a href="<?php echo wp_logout_url(); ?>">Log Out</a></li>
 								</ul>
 							</div>
