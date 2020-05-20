@@ -22,6 +22,7 @@
 								<ul id="menu-user-menu" class="user-menu">
 									<li><a href="/members/me/shop/cart/">Cart</a></li>
 									<li><a href="/account/orders">Orders</a></li>
+									<li><a href="/members/me/shop/cart/">Cart</a></li>
 									<li><a href="/members/me/settings/">Settings</a></li>
 									<li><a href="<?php echo wp_logout_url(); ?>">Log Out</a></li>
 								</ul>
