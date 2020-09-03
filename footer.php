@@ -52,7 +52,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<div class="row">
 
-			<div class="col-md-4">
+			<div class="col-md-6">
 				<div class="row">
 					<div class="col-sm-4">
 						<?php if ( dynamic_sidebar('footer_menu_1') ) : else : endif; ?>
@@ -65,7 +65,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					</div>
 				</div>
 			</div>
-			<div class="col-md-8">
+			<div class="col-md-4">
 			</div>
 
 		</div><!-- row end -->
