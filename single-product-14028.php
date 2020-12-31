@@ -19,9 +19,9 @@ $product = get_the_ID();
 	.product_meta,
 	.woocommerce div.product form.cart div.quantity {display: none !important;}
 
-	.woocommerce #content div.product div.summary, 
-	.woocommerce div.product div.summary, 
-	.woocommerce-page #content div.product div.summary, 
+	.woocommerce #content div.product div.summary,
+	.woocommerce div.product div.summary,
+	.woocommerce-page #content div.product div.summary,
 	.woocommerce-page div.product div.summary {
 		float: none;
 		width: 100%;
@@ -127,7 +127,7 @@ $product = get_the_ID();
 	    margin: 15px auto 50px;
 	}
 
-	.woocommerce div.product form.bundle_form div.bundled_product_summary, 
+	.woocommerce div.product form.bundle_form div.bundled_product_summary,
 	.woocommerce div.product.bundled_product_summary {
 		display: table;
     	width: 100%;
@@ -190,7 +190,7 @@ $product = get_the_ID();
 
 <div class="wrapper single-product-14028" id="page-wrapper">
 
-	<?php get_template_part( '/template-parts/bp-user-menu' ); ?>
+	<?php get_template_part( '/template-parts/shop-user-menu' ); ?>
 
 	<div class="container pagesection50" id="content" tabindex="-1">
 
@@ -200,9 +200,9 @@ $product = get_the_ID();
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
-						<?php 
+						<?php
 
-							wc_get_template_part( 'content', 'single-product' ); 
+							wc_get_template_part( 'content', 'single-product' );
 						?>
 
 				<?php endwhile; // end of the loop. ?>

@@ -21,34 +21,38 @@ $pagecss = get_post_meta( $postid, 'bbpage_page_css', true );
 <style><?php echo $pagecss; ?></style>
 <!-- custom css -->
 
-<div class="wrapper" id="page-wrapper">
+	<div class="wrapper" id="page-wrapper">
 
-	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
+		<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
-		<div class="row">
+			<div class="row">
 
-			<main class="site-main" id="main">
+				<div class="col">
 
-				<?php while ( have_posts() ) : the_post(); ?>
+					<main class="site-main" id="main">
 
-					<?php get_template_part( 'loop-templates/content', 'page' ); ?>
+						<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
-					?>
+							<?php get_template_part( 'loop-templates/content', 'page' ); ?>
 
-				<?php endwhile; // end of the loop. ?>
+							<?php
+							// If comments are open or we have at least one comment, load up the comment template.
+							if ( comments_open() || get_comments_number() ) :
+								comments_template();
+							endif;
+							?>
 
-			</main><!-- #main -->
+						<?php endwhile; // end of the loop. ?>
 
-		</div><!-- #primary -->
+					</main><!-- #main -->
 
-	</div><!-- .row -->
+				</div><!-- col -->
 
-</div><!-- Container end -->
+			</div><!-- row -->
+
+		</div><!-- container -->
+
+	</div><!-- wrapper-->
 
 </div><!-- Wrapper end -->
 

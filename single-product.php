@@ -10,6 +10,70 @@ get_header();
 $product = get_the_ID();
 ?>
 
+    <style>
+      .product_meta{display: none;}
+      .woocommerce-Price-amount.amount {
+        font-family: brandon-grotesque, sans-serif;
+        font-style: normal;
+        font-weight: 900 !important;
+        text-transform: uppercase;
+        font-size: 32px !important;
+        line-height: 40px !important;
+        color: #D3D3D3 !important;
+      }
+
+      .woocommerce #content div.product .woocommerce-tabs,
+      .woocommerce div.product .woocommerce-tabs,
+      .woocommerce-page #content div.product .woocommerce-tabs,
+      .woocommerce-page div.product .woocommerce-tabs {
+        float: right;
+        width: 48%;
+        clear: none;
+        margin-bottom: 50px;
+      }
+
+      .woocommerce div.product .woocommerce-tabs ul.tabs {display: none;}
+
+      .woocommerce div.product .woocommerce-tabs h2 {font-size: 20px;}
+
+      .woocommerce-product-details__short-description {margin-bottom: 15px;}
+
+      .woocommerce .related.products {clear: both;}
+      .woocommerce .related.products ul.products li.product a img {margin-bottom: 0;}
+      .woocommerce .related.products ul.products li.product a h2 {
+        color: #252525;
+        float: left;
+        display: inline-block;
+        width: 75%;
+        font-size: 16px;
+      }
+
+      .woocommerce ul.products li.product .price {
+        display: inline-block;
+        font-size: 16px;
+        float: right;
+        width: 25%;
+        text-align: right;
+      }
+
+      .woocommerce .related.products ul.products li.product .woocommerce-Price-amount.amount {
+        color: #D3D3D3;
+        font-size: 16px !important;
+      }
+
+      .woocommerce .related.products ul.products li.product a.btn-outline-primary {padding: 10px 15px !important;}
+
+      @media screen and (max-width: 992px) {
+        .woocommerce #content div.product .woocommerce-tabs,
+        .woocommerce div.product .woocommerce-tabs,
+        .woocommerce-page #content div.product .woocommerce-tabs,
+        .woocommerce-page div.product .woocommerce-tabs {
+            float: none;
+            width: 100%;
+        }
+      }
+    </style>
+
 <?php if ( is_product() && has_term( 'Ticket', 'product_cat' ) ) { ?>
     <style>
     	.cart .quantity {
@@ -45,7 +109,7 @@ $product = get_the_ID();
 
 <div class="wrapper single-product" id="page-wrapper">
 
-	<?php get_template_part( '/template-parts/bp-user-menu' ); ?>
+	<?php get_template_part( '/template-parts/shop-user-menu' ); ?>
 
 	<div class="container pagesection50" id="content" tabindex="-1">
 

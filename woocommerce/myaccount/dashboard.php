@@ -14,7 +14,7 @@
  *
  * @see         https://docs.woocommerce.com/document/template-structure/
  * @package     WooCommerce/Templates
- * @version     2.6.0
+ * @version     4.4.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -38,8 +38,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="pagesection30">
 			<?php
 				$user = wp_get_current_user();
-				$user_ID = $user->ID;	
-				$user_name = $user->user_login;	
+				$user_ID = $user->ID;
+				$user_name = $user->user_login;
 				$student_check = get_user_meta($user_ID, 'bbc_user_student_tag', true);
 				$club_check = get_user_meta($user_ID, 'bbc_user_club_tag', true);
 
@@ -59,7 +59,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			}
 
 			/*<!-- if user is free -->*/
-			else { 
+			else {
 				get_template_part( '/template-parts/dashboard/dashboard-free' );
 			} ?>
 		</div>

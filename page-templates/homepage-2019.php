@@ -10,11 +10,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
 <style>
-	#home-wrapper .headersection {background-image: url('/wp-content/uploads/2020/08/Background_Magic_1.jpg'); padding-top: 75px;}
+	#home-wrapper .headersection {background-image: url('/wp-content/uploads/2020/10/Back_Home_NOLA.jpg');}
 
 	#home-wrapper .headersection a.home-header-link {background: transparent; z-index: 1000;}
 
-	#home-wrapper .headersection .headertext .button-yellow {margin: 25px auto auto;}
+	/* #home-wrapper .headersection .headertext .button-yellow {margin: 25px auto auto;} */
 
 	h1 {
 		font-family: lust, serif;
@@ -30,7 +30,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 	.lusthighlight {
 		font-family: lustscript, serif;
-	    font-weight: 300;    
+	    font-weight: 300;
 		font-size: 26px !important;
 	    line-height: 32px !important;
 	    text-transform: lowercase;
@@ -98,7 +98,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 									</div>
 								</div> -->
 
-								<!-- <div class="headersection">
+								<div class="headersection">
 									<a class="home-header-link" href="/community"></a>
 									<div class="container">
 										<div class="headertext">
@@ -116,9 +116,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</div>
 										</div>
 									</div>
-								</div> -->
+								</div>
 
-								<div class="headersection">
+								<!-- <div class="headersection">
 									<a class="home-header-link" href="/gathering"></a>
 									<div class="container">
 										<img class="gatheringimage" src="/wp-content/uploads/2020/08/Gathering_Gathering.png">
@@ -134,7 +134,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</div>
 										</div>
 									</div>
-								</div>
+								</div> -->
 
 							</header><!-- .entry-header -->
 
@@ -151,7 +151,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 														'orderby'    => 'meta_value_num',
 														'order'      => 'ASC'
 												);
-											
+
 												$home_query = new WP_Query( $query_args );
 											if ( $home_query->have_posts() ) {
 												while ( $home_query->have_posts() ) {
@@ -195,7 +195,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											<div class="row">
 												<div class="col-md-3">
 													<a href="/podcast">
-														<img src="/wp-content/uploads/2020/09/iTunesAvatar_2020_500.jpg">
+														<img src="/wp-content/uploads/2020/11/BeingBoss_iTunesAvatar_2020_500.jpg">
 														<h3>Being Boss</h3>
 														<p><?php echo do_shortcode('[bb-main-count]'); ?></p>
 													</a>
@@ -271,7 +271,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							</div>
 							</div><!-- .entry-content -->
 
-						</article><!-- #post-## -->				
+						</article><!-- #post-## -->
 
 					<?php endwhile; // end of the loop. ?>
 

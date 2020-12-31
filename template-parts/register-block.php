@@ -1,7 +1,16 @@
+<style>
+#registerpage .container {padding: 100px 0;}
+@media screen and (max-width: 767px) {
+		#registerpage .container {padding: 25px 0;}
+		#registerpage .whitesection {padding: 25px;}
+		#registerpage h1.giant {font-size: 42px !important;}
+}
+</style>
+
 <div id="registerpage">
 
 	<div class="imagebackground" style="background-image: url('/wp-content/uploads/2018/08/Back_Laptop_2.jpg');">
-		<div class="container" style="padding: 100px 0;">
+		<div class="container">
 			<div class="registerwrapper">
 				<div class="whitesection">
 					<h1 class="lustscript giant regular center">Join the Club!</h1>

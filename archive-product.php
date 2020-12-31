@@ -15,6 +15,8 @@ get_header();
 
 <div class="wrapper" id="full-width-page-wrapper" style="padding: 0px 0;">
 
+	<?php get_template_part( '/template-parts/shop-user-menu' ); ?>
+
 	<div class="container product-archive" id="content" tabindex="-1">
 
 		<div class="row">
@@ -23,10 +25,11 @@ get_header();
 
 			<main class="site-main" id="main">
 
-				<header class="entry-header" style="padding-top: 30px;">
+				<header class="entry-header mobileshow" style="padding-top: 30px;">
 					<div class="row">
 						<div class="col">
 							<ul class="shopmenu">
+								<li><a href="#merch">MERCHANDISE</a></li>
 								<li><a href="#courses">COURSES</a></li>
 								<li><a href="#masterclasses">MASTERCLASSES</a></li>
 								<li><a href="#books">BOOKS</a></li>
@@ -35,6 +38,49 @@ get_header();
 						</div>
 					</div>
 				</header><!-- .entry-header -->
+
+
+				<h2 id="merch" class="padtop50">MERCHANDISE</h2>
+				<div class="masterclasscontainer">
+
+					<?php
+						$masterclasses_args = array(
+							'post_type' => array( 'product' ),
+							'tax_query' => array(
+								array(
+									'taxonomy' => 'product_cat',
+									'field'    => 'slug',
+									'terms'    => 'merchandise',
+								),
+							),
+							'orderby'        => 'title',
+							'order'			=> 'ASC',
+						);
+
+						$masterclass_query = new WP_Query( $masterclasses_args );
+
+						if ( $masterclass_query->have_posts() ) { ?>
+							<?php while ($masterclass_query->have_posts()) {
+								$masterclass_query->the_post();
+								$masterclassid = get_the_ID();
+							?>
+								<div class="masterclassitem" id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
+									<a href="<?php the_permalink(); ?>">
+										<span class="masterclass-image">
+											<?php the_post_thumbnail('archive-thumb'); ?>
+										</span>
+										<span class="masterclass-meta">
+											<span class="masterclass-title"><?php the_title(); ?></span>
+											<span class="masterclass-price">$<?php echo $product->get_regular_price(); ?></span>
+										</span>
+									</a>
+								</div>
+							<?php } ?>
+
+						<?php } ?>
+
+				</div> <!-- masterclasscontainer -->
+				<?php wp_reset_postdata(); ?>
 
 
 				<div class="pagesection50">
@@ -72,7 +118,7 @@ get_header();
 					<h2 id="masterclasses" class="padtop50">MASTERCLASSES</h2>
 					<div class="masterclasscontainer">
 
-						<?php 
+						<?php
 							$masterclasses_args = array(
 								'post_type' => array( 'product' ),
 								'tax_query' => array(
@@ -90,7 +136,7 @@ get_header();
 
 							if ( $masterclass_query->have_posts() ) { ?>
 								<?php while ($masterclass_query->have_posts()) {
-									$masterclass_query->the_post(); 
+									$masterclass_query->the_post();
 									$masterclassid = get_the_ID();
 								?>
 									<div class="masterclassitem" id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
@@ -101,12 +147,12 @@ get_header();
 											<span class="masterclass-meta">
 												<span class="masterclass-title"><?php the_title(); ?></span>
 												<span class="masterclass-price">$<?php echo $product->get_regular_price(); ?></span>
-											</span> 
+											</span>
 										</a>
-									</div>														
+									</div>
 								<?php } ?>
 
-							<?php } ?>	
+							<?php } ?>
 
 					</div> <!-- masterclasscontainer -->
 					<?php wp_reset_postdata(); ?>
@@ -116,7 +162,7 @@ get_header();
 					<p class="helvetica fs14">ALL FOLLOWING LINKS ARE AMAZON AFFILIATE LINKS</p>
 					<div class="bookscontainer">
 
-						<?php 
+						<?php
 							$books_args = array(
 								'post_type' => array( 'affiliates' ),
 								'tax_query' => array(
@@ -135,7 +181,7 @@ get_header();
 
 							if ( $books_query->have_posts() ) { ?>
 								<?php while ($books_query->have_posts()) {
-									$books_query->the_post(); 
+									$books_query->the_post();
 									$bookid = get_the_ID();
 									$booklink = get_post_meta( $bookid, 'bbaffiliates_link', true );
 								?>
@@ -146,12 +192,12 @@ get_header();
 											</span>
 											<span class="book-meta">
 												<span class="book-title"><?php the_title(); ?></span>
-											</span> 
+											</span>
 										</a>
-									</div>														
+									</div>
 								<?php } ?>
 
-							<?php } ?>	
+							<?php } ?>
 
 					</div> <!-- bookscontainer -->
 					<?php wp_reset_postdata(); ?>
@@ -161,7 +207,7 @@ get_header();
 					<p class="helvetica fs14 upper">All following links may include affiliate links or sponsorship partners. We only endorse products we actually use and love – and when you use our links it shows your support for our podcast and free resources! Thanks!</p>
 					<div class="toolscontainer">
 
-						<?php 
+						<?php
 							$tools_args = array(
 								'post_type' => array( 'affiliates' ),
 								'tax_query' => array(
@@ -180,7 +226,7 @@ get_header();
 
 							if ( $tools_query->have_posts() ) { ?>
 								<?php while ($tools_query->have_posts()) {
-									$tools_query->the_post(); 
+									$tools_query->the_post();
 									$toolid = get_the_ID();
 									$toollink = get_post_meta( $toolid, 'bbaffiliates_link', true );
 								?>
@@ -191,12 +237,12 @@ get_header();
 											</span>
 											<span class="tool-meta">
 												<span class="tool-title"><?php the_title(); ?></span>
-											</span> 
+											</span>
 										</a>
-									</div>														
+									</div>
 								<?php } ?>
 
-							<?php } ?>	
+							<?php } ?>
 
 					</div> <!-- toolscontainer -->
 					<?php wp_reset_postdata(); ?>

@@ -26,13 +26,73 @@ function theme_enqueue_styles() {
 
 function add_theme_scripts() {
   wp_enqueue_style( 'theme-styles', get_stylesheet_directory_uri() . '/style.css', array(), filemtime( get_stylesheet_directory() . '/style.css' ) );
-  
   //wp_enqueue_script( 'custombb', get_stylesheet_directory_uri() . '/js/custombb.js', array(), false);
-
 }
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 
+if ( ! isset( $content_width ) )
+    $content_width = 1140;
 
+
+function bb_gutenberg_theme_support() {
+	add_theme_support( 'align-wide' );
+	add_theme_support( 'editor-styles' );
+	add_theme_support( 'editor-color-palette', array(
+    array(
+			'name' => __( 'yellow', 'bt_18' ),
+			'slug' => 'yellow',
+			'color' => '#FFF200',
+		),
+		array(
+			'name' => __( 'pink', 'bt_18' ),
+			'slug' => 'pink',
+			'color' => '#EC008C',
+		),
+		array(
+			'name' => __( 'blue', 'bt_18' ),
+			'slug' => 'blue',
+			'color' => '#00AEEF',
+		),
+		array(
+			'name' => __( 'black', 'bt_18' ),
+			'slug' => 'black',
+			'color' => '#252525',
+		),
+		array(
+			'name' => __( 'dark grey', 'bt_18' ),
+			'slug' => 'darkgrey',
+			'color' => '#404040',
+		),
+		array(
+			'name' => __( 'middle grey', 'bt_18' ),
+			'slug' => 'middlegrey',
+			'color' => '#7C7C7C',
+		),
+		array(
+			'name' => __( 'light grey', 'bt_18' ),
+			'slug' => 'lightgrey',
+			'color' => '#eaeaea',
+		),
+		array(
+			'name' => __( 'white', 'bt_18' ),
+			'slug' => 'white',
+			'color' => '#ffffff',
+		),
+	) );
+}
+add_action( 'after_setup_theme', 'bb_gutenberg_theme_support' );
+
+// Load the fonts within Gutenberg.
+function bb_gutenberg_fonts() {
+	wp_enqueue_style( 'g_bb-fonts', 'https://fonts.googleapis.com/css?family=PT+Serif', array() );
+  wp_enqueue_script( 'adobe_bb-fonts', 'https://use.typekit.net/owk8dwn.js', array() );
+}
+add_action( 'enqueue_block_editor_assets', 'bb_gutenberg_fonts' );
+
+function bb_gutenberg_editor_styles() {
+	add_editor_style( '/css/gutenberg-editor-styles.css' );
+}
+add_action( 'admin_init', 'bb_gutenberg_editor_styles' );
 
 
 /**
@@ -163,26 +223,26 @@ add_filter( 'body_class', function( $classes ) {
 
 
 function um_filter_dynamic_post_args( $post_args , $menu_item_id ){
- 
+
     //Target menu item 562
     if( $menu_item_id == 12942 ){
- 
+
         //Change orderby to random
         $post_args['orderby'] = 'rand';
     }
- 
+
     return $post_args;
- 
+
 }
 add_filter( 'ubermenu_dynamic_posts_args' , 'um_filter_dynamic_post_args' , 10 , 2 );
 
 
 function my_uber_add_subcontent( $content , $post , $item_id ){
- 
+
    $content.= '<span class="ubermenu-target-description ubermenu-target-text">';
    $content.= $post->post_excerpt;
    $content.= '</span>';
- 
+
    return $content;
 }
 add_filter( 'ubermenu_dp_subcontent' , 'my_uber_add_subcontent' , 10 , 3 );
@@ -192,9 +252,9 @@ add_filter( 'ubermenu_dp_subcontent' , 'my_uber_add_subcontent' , 10 , 3 );
 
 
 /*function replace_affiliate_register_text( $content ){
- 
+
    $content.= 'test5';
- 
+
    return $content;
 }
 apply_filter( 'yith_wcaf_registration_form_become_affiliate_text', 'replace_affiliate_register_text' );*/
@@ -252,7 +312,7 @@ add_filter( 'template_include', 'custom_single_product_template_include', 50, 1 
 function custom_single_product_template_include( $template ) {
     if ( is_singular('product') && (has_term( 'Membership', 'product_cat')) ) {
         $template = get_stylesheet_directory() . '/single-product-14028.php';
-    } 
+    }
     return $template;
 }
 

@@ -13,99 +13,64 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <?php get_sidebar( 'footerfull' ); ?>
 
-<?php if (! get_post_meta( get_the_ID(), 'bbpage_hide_subscribe', 1 ) )  : ?>
-	<div class="wrapper" id="footer-subscribe">
+	<footer class="wrapper" id="wrapper-footer">
 
-		<div class="<?php echo esc_attr( $container ); ?>">
+		<div class="container">
 
 			<div class="row">
 
-				<div class="col-md-5 footer-subscribe-left">
+				<?php if ( wp_is_mobile() ) { ?>
+					<?php get_template_part( '/template-parts/footer-subscribe' ); ?>
+					<?php if(!is_front_page()) { ?>
+						<?php get_template_part( '/template-parts/footer-menus' ); ?>
+					<?php } ?>
+				<?php } else { ?>
+					<?php get_template_part( '/template-parts/footer-menus' ); ?>
+					<?php get_template_part( '/template-parts/footer-subscribe' ); ?>
+				<?php } ?>
 
-					<img src="/wp-content/themes/beingboss2018/img/Footer_HeadphonesBoss2_Optimized.png">
+			</div><!-- row end -->
+			<div class="row bottom-row">
 
-				</div><!--col end -->
-				<div class="col-md-7 footer-subscribe-right">
-					<div class="pagesection">
-						<p class="brandon large">CREATIVE + ENTREPRENEUR</p>
-						<p class="xmedium italic">Get the scoop on how to be more boss.</p>
-						<div class="formwide-one"><?php echo do_shortcode('[gravityform id="9" title="true" description="false"]'); ?></div>
-						<p class="center small padtop15">Subscribing indicates your consent to our <a href="/terms" target="_blank" class="blacklink underline">Terms of Use</a> &amp; <a href="/privacy" target="_blank" class="blacklink underline">Privacy Policy.</a></p>
+				<div class="col-md-4">
+					<div class="row" id="footer-social">
+						<div class="col-sm-6">
+							<h3>LISTEN</h3>
+							<ul>
+								<li><a href="https://podcasts.apple.com/us/artist/being-boss/1359403924" target="_blank"><i class="fab fa-apple"></i></a></li>
+								<li><a href="https://podcasts.google.com/feed/aHR0cHM6Ly93d3cuYnV6enNwcm91dC5jb20vMzc3MDIucnNz" target="_blank"><i class="fab fa-google-play"></i></a></li>
+								<li><a href="https://soundcloud.com/beingboss" target="_blank"><i class="fab fa-soundcloud"></i></a></li>
+								<li><a href="https://open.spotify.com/show/0tRmU2Ipy2raYtjlz0Dz7w" target="_blank"><i class="fab fa-spotify"></i></a></li>
+								<li><a href="https://www.stitcher.com/podcast/being-boss" target="_blank"><i class="stitcher"></i></a></li>
+								<li><a href="http://tun.in/pi30v" target="_blank"><i class="tunein"></i></a></li>
+								<li><a href="https://music.amazon.com/podcasts/a7c77495-d701-4d3d-a250-155b8a1e959d/Being-Boss-Mindset-Habits-Tactics-and-Lifestyle-for-Creative-Entrepreneurs" target="_blank"><i class="fab fa-amazon"></i></a></li>
+							</ul>
+						</div>
+						<div class="col-sm-6">
+							<h3>FOLLOW</h3>
+							<ul>
+								<li><a href="https://www.instagram.com/beingbossclub/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+								<li><a href="https://twitter.com/beingbossclub" target="_blank"><i class="fab fa-twitter"></i></a></li>
+								<li><a href="https://www.facebook.com/beingbossclub/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+								<li><a href="https://www.pinterest.com/beingboss/" target="_blank"><i class="fab fa-pinterest"></i></a></li>
+							</ul>
+						</div>
 					</div>
-				</div><!--col end -->
+				</div>
+				<div class="col-md-3">
+
+				</div>
+				<div class="col-md-5">
+					<div class="site-info">
+						<?php if ( dynamic_sidebar('footer_copyright') ) : else : endif; ?>
+					</div><!-- .site-info -->
+				</div>
 
 			</div><!-- row end -->
 
 		</div><!-- container end -->
 
-	</div><!-- pagesection end -->
-	
-	<footer class="wrapper" id="wrapper-footer">
-	
-	<?php else: ?>
-		<footer class="wrapper" id="wrapper-footer">
-		
-<?php endif; ?>
-
-
-	<div class="<?php echo esc_attr( $container ); ?>">
-
-		<div class="row">
-
-			<div class="col-md-6">
-				<div class="row">
-					<div class="col-sm-4">
-						<?php if ( dynamic_sidebar('footer_menu_1') ) : else : endif; ?>
-					</div>
-					<div class="col-sm-4">
-						<?php if ( dynamic_sidebar('footer_menu_2') ) : else : endif; ?>
-					</div>
-					<div class="col-sm-4">
-						<?php if ( dynamic_sidebar('footer_menu_3') ) : else : endif; ?>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-			</div>
-
-		</div><!-- row end -->
-		<div class="row bottom-row">
-
-			<div class="col-md-4">
-				<div class="row" id="footer-social">
-					<div class="col-sm-6">
-						<h3>LISTEN</h3>
-						<ul>
-							<li><a href="https://itunes.apple.com/us/artist/being-boss/1359403924" target="_blank"><i class="fab fa-apple"></i></a></li>
-							<li><a href="https://play.google.com/music/listen?u=0#/ps/Ijagnvf6ruqcxffbhnjxmxl52zy" target="_blank"><i class="fab fa-google-play"></i></a></li>
-							<li><a href="https://soundcloud.com/beingboss" target="_blank"><i class="fab fa-soundcloud"></i></a></li>
-						</ul>
-					</div>
-					<div class="col-sm-6">
-						<h3>FOLLOW</h3>
-						<ul>
-							<li><a href="https://www.instagram.com/beingbossclub/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-							<li><a href="https://twitter.com/beingbossclub" target="_blank"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="https://www.facebook.com/beingbossclub/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="https://www.pinterest.com/beingboss/" target="_blank"><i class="fab fa-pinterest"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				
-			</div>
-			<div class="col-md-5">
-				<div class="site-info">
-					<?php if ( dynamic_sidebar('footer_copyright') ) : else : endif; ?>
-				</div><!-- .site-info -->
-			</div>
-
-		</div><!-- row end -->
-
-	</div><!-- container end -->
-
-</div><!-- wrapper end -->
+	</footer><!-- wrapper end -->
 
 </div><!-- #page we need this extra closing tag here -->
 
@@ -118,35 +83,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
 <script src="/wp-content/themes/beingboss2018/drawer/drawer.min.js" charset="utf-8"></script>
 
-<!-- Drip -->
-<script type="text/javascript">
-  var _dcq = _dcq || [];
-  var _dcs = _dcs || {};
-  _dcs.account = '5427386';
-
-  (function() {
-    var dc = document.createElement('script');
-    dc.type = 'text/javascript'; dc.async = true;
-    dc.src = '//tag.getdrip.com/5427386.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(dc, s);
-  })();
-</script>
-<!-- end Drip -->
 <script>
 	jQuery(document).ready(function(){
 		 var iFrameDOM = jQuery("iframe#dsq-app1071").contents();
 		iFrameDOM.find("li.sso").css("display", "none");
 	});
 </script>
-<script>
-		window.onload = onPageLoad();
-		function onPageLoad() {
-		  // document.getElementById("wcdrip_subscribe").checked = true;
-		  jQuery("input[name=wcdrip_subscribe]").attr('checked', true); // Deprecated
-		  jQuery("input[name=wcdrip_subscribe]").prop('checked', true);
-		}
-	</script>
+
 <script>
 	jQuery(document).ready(function(){
 	  jQuery(window).bind('scroll', function() {
@@ -165,4 +108,3 @@ $container = get_theme_mod( 'understrap_container_type' );
 </body>
 
 </html>
-

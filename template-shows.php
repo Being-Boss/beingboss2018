@@ -37,7 +37,7 @@ $postid = get_the_ID();
 											<div class="row">
 												<div class="col-md-3">
 													<a href="/podcast">
-														<img src="/wp-content/uploads/2020/09/iTunesAvatar_2020_500.jpg">
+														<img src="/wp-content/uploads/2020/11/BeingBoss_iTunesAvatar_2020_500.jpg">
 														<h3>Being Boss</h3>
 														<p><?php echo do_shortcode('[bb-main-count]'); ?></p>
 													</a>
